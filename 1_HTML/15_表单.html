@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+    <form action="https://search.jd.com/search" >
+        <fieldset>
+            <legend>
+                主要信息
+            </legend>
+                <label for="zhanghu">账户：</label>
+            <input id="zhanghu" type="text" name="account" value="zhangsan" maxlength="9"><br>
+            <label for="mima">密码：</label>
+            <input id="mima" type="password" name="pwd" value="123"><br>
+            性别：
+            <input type="radio" name="gender" value="male" id="nan">
+            <label for="nan">男</label>
+            <label>
+                <input type="radio" name="gender" value="female">女<br>
+            </label>
+        </fieldset>
+        爱好：
+        <input type="checkbox" name="hoppy" value="smoke">抽烟
+        <input type="checkbox" name="hoppy" value="drink">喝酒
+        <input type="checkbox" name="hoppy" value="perm">烫头<br>
+        <!-- 隐藏域 -->
+        <input type="hidden" name="abc" value="123">
+        其他：
+        <textarea name="other" cols="22" rows="3"></textarea><br>
+        籍贯：
+        <select name="place">
+            <option value="皖">安徽</option>
+            <option value="我" selected>江西</option>
+            <option value="粤">广东</option>
+            <option value="你">上海</option>
+
+        </select><br>
+        <!-- <button type="submit">确认</button> -->
+        <!-- <button type="reset">重置</button> -->
+        <!-- <button type="button">检测用户是否被注册</button> -->
+        <!-- 按钮不要写name -->
+        <input type="submit" value="确认">
+        <input type="reset" value="重置">
+        <input type="button" value="检测用户是否被注册">
+    </form>
+</body>
+</html>
+

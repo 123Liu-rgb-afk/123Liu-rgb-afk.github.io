@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>标签使用细节</title>
+</head>
+<body>
+<!--
+  1. 标签不能交叉使用-->
+<div><span>这是正确的</span></div>
+<!--标签必须正确关闭-->
+<span> </span>
+<!--注释不能嵌套< !--不可以-- >-->
+<!--html语法不严谨，有时候错误有不报错，因为浏览器会自动补充-->
+<font color = red>red会加“”，
+<!--对应标签的属性，顺序不做要求-->
+</font>
+<font color="blue" size="40px" face="微软雅黑">北京</font>
+small &lt;hr/&gt;Jack&nbsp;&nbsp;&nbsp;&nbsp;刘瑞玺
+<!--标题标签-->
+
+<h1 align="left">1</h1>
+<h2>2</h2>
+<h3>3</h3>
+<h4>4</h4>
+<h5>5</h5>
+
+<a target="_blank" href = "https://www.jd.com/?cu=true&utm_source=lianmeng__10__browser.lenovo.com.cn&utm_medium=tuiguang&utm_campaign=t_330412191_&utm_term=1f28bac975224b9ba64e03f1f0f3ef94">
+京东</a>
+<a href="mailto:tom@sohu.com">联系管理员</a>
+
+<!--ul:表示无序列表
+-->
+<h1>五虎</h1>
+<ol type="I" start="3">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ol>
+<!--表示当前路径下的 img 文件夹下的 1.png-->
+<img src = "./img/1.png" width="400" border="2">
+<img src="http://localhost:63342/html/img/1.png">
+</body>
+</html>
