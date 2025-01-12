@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+<!--
+1.在head中，增加了<style type="text/css"></style>
+2.表示要写的css内容
+3.div<>表示对div元素进行样式的选择,div 就是一个选择器(元素/标签选择器)
+4.使用;隔开,最后一行属性没有; 最好加上
+5.最好一行只选择一个属性
+6.小经验:在调试css时,可以通过修改颜色和大小来判断是否改变-->
+  <style type="text/css">
+
+    div {
+      /*在css中注释是这样的，快捷键 crtl+/  */
+      width:300px;
+      height:100px;
+      background-color: red;
+      /*字体类型
+      1.font-size 字体大小
+      2.font-weight 字体加粗
+      3.font-family 字体类型*/
+      font-size: 40px;
+      font-weight: bold;
+      font-family: 宋体;
+      /*下面两句表示整体居中 margin 边缘*/
+      margin-left: auto;
+      margin-right: auto;
+      /*文本居中*/
+      text-align: center;
+    }
+    a {
+      /*decoration :修饰
+      关闭修饰：去掉下划线*/
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+<div>hello,上海</div><br/>
+<div>hello,上海</div><br/>
+<div>hello,上海</div><br/>
+<div>hello,上海</div><br/>
+
+
+</body>
+</html>

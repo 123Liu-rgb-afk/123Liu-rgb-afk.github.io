@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器优先级</title>
+    <style>
+
+        /*
+        !important
+         行内大于
+        #id选择器大于
+        .类选择器大于
+        元素选择器大于
+        通配选择器 */
+        /* .container span.nihao {
+            color:brown;
+        } */
+         /* #ai{
+            color:blue;
+         } */
+         div>p>span:nth-child(1){
+            color:green;
+         }
+
+         span.nihao{
+            color:aqua;
+         }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>
+            <span class="nihao" id="ai">你好,你好</span>
+            <span>我的头发是真发</span>
+        </p>
+    </div>
+</body>
+</html>
