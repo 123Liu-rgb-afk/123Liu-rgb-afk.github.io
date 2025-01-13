@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>onsubmit 表单提交事件</title>
+  <script type="text/javascript">
+    function register() {
+      var f1 = document.getElementById("form1");
+      var f2 = document.getElementById("form2");
+      if(f1.value=="" || f2.value==""){
+        alert("用户名和密码不能为空");
+        return false;
+      }
+      return true;
+    }
+
+    window.onload = function () {
+      var form = document.getElementById("form");
+      form.onsubmit = function () {
+        if(form.username.value == "" || form.pwd.value == "")
+        {
+          alert("用户名和密码不能为空");
+          return false;
+        }
+        return true;
+      }
+    }
+  </script>
+</head>
+<body>
+<!--静态注册-->
+<form action="OK.html" onsubmit="return register()">
+  u:<input type="text" name="username" id="form1" /></br>
+  p:<input type="password" name="pwd" id="form2" /></br>
+  <input type="submit" value="注册用户" />
+
+</form>
+
+<!--动态注册-->
+<form action="OK.html" id="form">
+  u:<input type="text" name="username"  /></br>
+  p:<input type="password" name="pwd"  /></br>
+  <input type="submit" value="注册用户" />
+
+</form>
+</body>
+</html>

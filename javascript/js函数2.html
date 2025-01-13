@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数的第二种使用</title>
+<!--  当数据类型-->
+  <script type="text/javascript">
+    //f1 指向了函数
+     var f1 = function (){
+       alert("hi");
+     }
+     var f2 = f1;
+     f2();
+     console.log(typeof f1);
+
+     var f3 = function (n1,n2){
+       return n1 + n2;
+     }
+     alert(f3(1,2));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

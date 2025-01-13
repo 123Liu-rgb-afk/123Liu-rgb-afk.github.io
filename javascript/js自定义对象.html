@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js自定义对象</title>
+  <script type="text/javascript">
+    //方式1
+    //定义一个对象
+    var object = new Object();
+    //增加一个属性
+    object.name = "liu";
+    //在增加一个属性
+    object.age = 10;
+    //增加一个方法/函数
+    object.f1 = function () {
+      //这里的this就是当前的object
+      console.log(this.name + " " + this.age);
+    }
+    //访问属性,即使使用了没有定义的属性，变量提升，不会报错，显示undefined
+    console.log(object.name + " " + object.email);
+
+    //调用函数
+    object.f1();
+
+    console.log(typeof object);
+
+    //方法2
+    var person = {
+      name : "liu",
+      age : 10,
+      f2 : function () {
+        console.log(this.name + " " + this.age);
+      },
+      sum : function (n1 , n2) {
+        return n1 + n2;
+      }
+    }
+    console.log(person.f2());
+    console.log(person.sum(1,2));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

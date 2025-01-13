@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>onblur失去焦点事件</title>
+  <script type="text/javascript">
+    function upperCase() {
+      var fname1 = document.getElementById("fname1");v= fname1.value.toUpperCase();
+
+      fname1.value = fname1.value.toUpperCase();
+    }
+
+
+    //动态注册
+    window.onload = function () {
+      var fname2 = document.getElementById("fname2");
+      fname2.onblur = function () {
+        fname2.value = fname2.value.toUpperCase();
+      }
+    }
+  </script>
+</head>
+<body>
+<!--静态注册-->
+输入小写英文：
+<input type="text" id="fname1" onblur="upperCase()" /></br>
+输入小写英文：
+<input type="text" id="fname2"></br>
+</body>
+</html>

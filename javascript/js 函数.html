@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数</title>
+<!--  三种函数定义方式-->
+  <script type="text/javascript">
+    //函数只有调用才会执行
+    //两种调用 1.主动调用 2.事件
+
+    //1定义没有放回值的函数
+    function hi() {
+      alert("hi~");
+    }
+    hi();
+    //2定义有形参的类型
+    //这里的形参，不需要指定类型，name的类型是由实参决定
+    function f2(name) {
+      alert(name);
+    }
+    f2(100);
+
+
+    //3定义有形参和返回值的函数
+    //不需要指定返回类型，返回类型由返回的数据决定
+    function f3(n1,n2) {
+      return n1 + n2;
+    }
+    alert(typeof f3(1,2));
+  </script>
+</head>
+<body>
+<!--
+      为按钮绑定了一个onclick事件
+      当用户点击了这个按钮，就会触发函数-->
+<button onclick="hi()">点这里</button>
+</body>
+</html>

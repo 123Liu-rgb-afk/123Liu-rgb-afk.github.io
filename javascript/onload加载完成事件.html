@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>onload加载完成事件</title>
+  <script type="text/javascript">
+    function sayOK() {
+      alert('静态注册 onload 事件')
+    }
+
+
+    //window（页面窗口） dom对象
+    //window.onload 表示页面加载完毕
+    //后面的function() 表示加载完毕，要执行的函数/代码
+    window.onload = function () {
+      alert("动态注册 onload 事件");
+    }
+  </script>
+</head>
+<body >
+hello
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作业</title>
+  <script type="text/javascript">
+    window.onload = function() {
+      var form = document.getElementById("form");
+      form.onsubmit = function () {
+        if(!(form.username.value.length >= 4 && form.username.value.length <= 6)) {
+          alert("用户名长度4-6");
+          return false;
+        }
+        if(form.pwd.value.length != 6) {
+          alert("密码长度6");
+          return false;
+        }
+        if(!(form.pwd1.value == form.pwd.value)) {
+          alert("密码长度6");
+          return false;
+        }
+        var emailPattern = /^[\w-]+@([a-zA-Z]+\.)+[a-zA-Z]+$/;
+
+        if(!emailPattern.test(form.e.value)) {
+          alert("不符合格式");
+          return false;
+        }
+        return true;
+
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>注册用户</h1>
+<form action="OK.html" id="form">
+  用户名:<input type="text" name="username" /></br>
+  密 码: <input type="password" name="pwd" /> </br>
+  确 认: <input type="password" name="pwd1" /> </br>
+  电 邮: <input type="email" name="e" /> </br>
+  <input type="submit" value="注册用户" >
+</form>
+</body>
+</html>

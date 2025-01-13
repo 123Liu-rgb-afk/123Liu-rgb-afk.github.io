@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>四种数组定义</title>
+  <script type="text/javascript ">
+    //数组定义的方式1,数组的每一个类型可以不一样
+    var cars1 = ["n","w","t",100];
+    console.log(cars1);
+    console.log(cars1[0]);//显示cars1 数组的第一个元素，0表示 索引
+
+    //方式2
+    var cars2 = [];//空数组，然后再添加元素
+    cars2[0] = 1;
+    cars2[1] = 2;
+    cars2[2] = "liu";
+    console.log(cars2);
+    console.log(cars2[10]);//没有定义的，undefined
+
+    //方式3
+    var cars3 = new Array(2,3,"liu");
+    console.log(cars3)
+
+
+    //方式4
+    var cars4 = new Array();
+    console.log(typeof cars4);
+    cars4[0] = "4";
+    cars4[1] = 1;
+    cars4[2] = 2;
+    cars4[0] = "zz";//相当于替换
+
+    cars4[9] = 9;//跳过赋值，没有定义的值为undefiend
+    console.log(cars4[8]);//验证一下是否为undefiend
+    console.log(cars4);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

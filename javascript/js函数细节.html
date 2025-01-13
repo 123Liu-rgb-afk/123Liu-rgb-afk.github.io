@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js 函数细节</title>
+
+  <script type="text/javascript">
+    //1.js 函数没有重载
+    // function f1(){
+    //   alert("hi");
+    // }
+    // function f1(name) {
+    //   alert("hi" + name);
+    // }
+    // f1();//输出hi undefined，因为没有给name传值
+
+
+    //2.函数的arguments 隐形函数（作用域在function 函数中）
+    //arguments是数组，在function函数中不需要定义，直接使用来获取所有参数的变量
+    //如果使用 console.log 输出对象的数据, 使用, 不能使用+
+    function f2() {
+      console.log("arguments= " , arguments);
+      console.log(arguments.length);
+      alert("f2被调用...");
+
+    }
+    f2(19,19,0,"刘");
+
+    //依然安装顺序匹配，没有匹配到，无所谓
+    //但会把所有的数据给arguments
+    //如果形参个数大于实参的个数，则没有匹配到的给undefined
+    function f3(n,m,b,v) {
+      console.log(n);
+      console.log("arguments= " , arguments);
+    }
+    f3(12,1,1);
+
+    function f4() {
+      var num = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        //typeof 放回字符串
+        if(typeof (arguments[i]) == "number") {
+          num += arguments[i];
+        }
+      }
+      return num;
+    }
+    var f = f4(12,1,1,"liu");
+    console.log(f);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
