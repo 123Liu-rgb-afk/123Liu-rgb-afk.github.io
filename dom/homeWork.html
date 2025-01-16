@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>乌龟吃鸡</title>
+  <script type="text/javascript">
+    function move(obj) {
+      //得到公鸡的坐标
+      var gonhji_left = 200;
+      var gongji_top = 200;
+
+      //得到公鸡的宽和高
+      var gongji_height = 73;
+      var gongji_width = 76;
+      //得到乌龟的宽和高
+      var wugui_width = 94;
+      var wugui_higth = 67;
+
+
+      var wugui = document.getElementById("wugui");
+      var wugui_left = wugui.style.left;
+      var wugui_top = wugui.style.top;
+
+
+      wugui_left = parseInt(wugui_left.substring(0,wugui_left.indexOf("p")));
+      wugui_top = parseInt(wugui_top.substring(0,wugui_top.indexOf("p")));
+
+
+      if(obj.value == "向上移动") {
+        wugui_top -= 10;
+        wugui.style.top = wugui_top + "px";
+
+      }
+      if(obj.value == "向左移动") {
+        wugui_left -= 10;
+        wugui.style.left = wugui_left + "px";
+
+
+      }
+      if(obj.value == "向下移动") {
+        wugui_top += 10;
+        wugui.style.top = wugui_top + "px";
+
+
+      }
+      if(obj.value == "向右移动") {
+        wugui_left += 10;
+        wugui.style.left = wugui_left + "px";
+      }
+
+
+
+      var y = Math.abs(wugui_top - gongji_top);
+      var x = Math.abs(wugui_left - gonhji_left);
+      var yy = 0;
+      var xx = 0;
+
+      if(wugui_top < gongji_top){
+        if(y < wugui_higth){
+          yy = 1;
+        }
+      }else{
+        if(y < gongji_height){
+          yy = 1;
+        }
+      }
+      if(wugui_left > gonhji_left){
+        if(x < gongji_width){
+          xx = 1;
+        }
+      }else{
+        if(x < wugui_width){
+          xx = 1;
+        }
+      }
+
+      if(yy && xx) {
+        alert("成功");
+        wugui.style.left = 100 + "px";
+        wugui.style.top = 120 + "px";
+      }
+
+    }
+  </script>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <td></td>
+    <td><input type="button" value="向上移动" onclick="move(this)"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="向左移动" onclick="move(this)"/></td>
+    <td></td>
+    <td><input type="button" value="向右移动" onclick="move(this)"/></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="button" value="向下移动" onclick="move(this)"/></td>
+    <td></td>
+  </tr>
+</table>
+<div id="wugui" style="position:absolute;left: 100px;top: 120px ">
+  <img src="./img/1.bmp" border="1" alt="">
+</div>
+<div id="gongji" style="position:absolute;left: 200px;top: 200px">
+  <img src="./img/2.bmp" border="1" alt="">
+</div>
+
+</body>
+</html>

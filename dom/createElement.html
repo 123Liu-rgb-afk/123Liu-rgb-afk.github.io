@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>createElement</title>
+  <script type="text/javascript" >
+    function addElement() {
+      var img = document.createElement("img");
+      img.src = "./img/1.png";
+      img.height = "100";
+
+      //展示
+      document.body.appendChild(img);
+    }
+  </script>
+</head>
+<body>
+<input type="button" value="创建一只小猫" onclick="addElement()">
+
+</body>
+</html>

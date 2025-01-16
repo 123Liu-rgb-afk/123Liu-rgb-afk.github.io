@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByName02动态注册</title>
+  <script type="text/javascript">
+    window.onload = function () {
+
+      var sports = document.getElementsByName("sport");
+      var selectAll = document.getElementById("selectAll");
+      var noSelectAll = document.getElementById("noSelectAll");
+      var selectReverse = document.getElementById("selectReverse");
+      selectAll.onclick = function () {
+        for (var i = 0; i < sports.length; i++) {
+          sports[i].checked = true;
+        }
+      }
+      noSelectAll.onclick = function () {
+        for (var i = 0; i < sports.length; i++) {
+          sports[i].checked = false;
+        }
+      }
+      selectReverse.onclick = function () {
+        for (var i = 0; i < sports.length; i++) {
+          sports[i].checked = !sports[i].checked;
+        }
+      }
+
+    }
+  </script>
+</head>
+<body>
+
+选择你喜欢的运动:<input type="checkbox" name="sport" value="篮球" checked="checked">篮球
+<input type="checkbox" name="sport" value="足球">足球
+<input type="checkbox" name="sport" value="排球">排球</br></br>
+<input type="button" value="全选" id="selectAll">
+<input type="button" value="全不选" id="noSelectAll">
+<input type="button" value="反选" id="selectReverse" >
+
+
+</body>
+</html>

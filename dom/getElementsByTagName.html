@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByTagName</title>
+  <script type="text/javascript">
+    function getElements () {
+      var imgs = document.getElementsByTagName("img");
+      //imgs 是object HTMLCollection]
+      alert(imgs.length);
+      var button = document.getElementById("button");
+      if(button.value == "查看有多少只猫，并切换成小狗") {
+        for (var i = 0; i < imgs.length; i++) {
+          imgs[i].src = "./img/" + (i + 4) + ".png";
+        }
+        button.value = "查看有多少只狗，并切换成小猫"
+      }
+      else if(button.value == "查看有多少只狗，并切换成小猫") {
+
+        for (var i = 0; i < imgs.length; i++) {
+          imgs[i].src = "./img/" + (i + 1) + ".png";
+        }
+        button.value = "查看有多少只猫，并切换成小狗";
+      }
+
+    }
+  </script>
+</head>
+<body>
+<img src="./img/1.png" height="100">
+<img src="./img/2.png" height="100">
+<img src="./img/3.png" height="100"></br>
+<input id="button" type="button" value="查看有多少只猫，并切换成小狗" onclick="getElements()">
+</body>
+</html>
