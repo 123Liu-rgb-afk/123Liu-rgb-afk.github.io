@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     标签/节点/元素细节
+     1.区分大小写
+     2.不能以数字开头
+     3.不能以空格开头
+     4.中间不能加符合（。）和空格
+     5.可以加_下划线
+
+-->
+<students>
+    <student id="100">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+    <student id="200">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+</students>

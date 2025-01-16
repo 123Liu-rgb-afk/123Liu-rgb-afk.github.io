@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     cdate细节
+     1.如果希望把某些字符串，当做普通文本，使用DATA包括
+     <![CDATA[
+        这里可以把你输入的字符原样显示，不会解析xml
+        可以输入任意字符，除]]>
+        不能嵌套
+     ]]>
+
+-->
+
+<students>
+    <student id="100">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+    <student id="200">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+</students>

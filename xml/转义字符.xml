@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     转义字符
+     1.对于一些单个字符，若想显示其原始样式，也可以使用转义字符的形式处理
+     < > &
+     &lt; &gt;
+
+-->
+
+<students>
+    <student id="100">
+        <name>刘</name>
+        <age>18 &lt; &gt;</age>
+        <sex>男</sex>
+    </student>
+    <student id="200">
+        <name>刘</name>
+        <age>age18</age>
+        <sex>男</sex>
+    </student>
+</students>

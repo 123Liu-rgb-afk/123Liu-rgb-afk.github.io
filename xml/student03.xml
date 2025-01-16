@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     属性细节
+     1.区分大小写<student id="100" ID="100">
+     2.属性值用" 或 '包起来
+     3.如果属性值含有" 则用' 比如：id='xxx"yyy'
+     3.如果属性值含有' 则用" 比如：id="xxx'yyy"
+     4.相同的属性只能有一个<student id="100" id="100">错误
+     5.属性值不能包含&
+-->
+<students>
+    <student id="100">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+    <student id="200">
+        <name>刘</name>
+        <age>18</age>
+        <sex>男</sex>
+    </student>
+</students>
