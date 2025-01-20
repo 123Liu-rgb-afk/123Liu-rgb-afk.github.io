@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+     <!--web.xml主要用来配置该web应用使用的到 Servlet-->
+    <!--servlet-name: 给servlet取名 ,唯一不能重复
+        servlet-class:Servlet类的全路径:tomcat底层反射生成Servlet用到
+        servlet-name:名字要和上面一样
+        url-pattern: 就是访问url的路径 http://localhost:8888/servlet/helloServlet-->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.lrx.servlet.HelloServlet</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/helloServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HiServlet</servlet-name>
+        <servlet-class>com.lrx.servlet.HiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HiServlet</servlet-name>
+        <url-pattern>/hiServlet</url-pattern>
+    </servlet-mapping>
+    <!--配置CatServlet-->
+    <servlet>
+        <servlet-name>CatServlet</servlet-name>
+        <servlet-class>com.lrx.servlet.homework.CatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CatServlet</servlet-name>
+        <url-pattern>/cat</url-pattern>
+    </servlet-mapping>
+    <!--配置DogServlet-->
+    <servlet>
+        <servlet-name>DogServlet</servlet-name>
+        <servlet-class>com.lrx.servlet.homework.DogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DogServlet</servlet-name>
+        <url-pattern>/dog</url-pattern>
+    </servlet-mapping>
+</web-app>
