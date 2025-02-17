@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom转jquery</title>
+  <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    window.onclick = function () {
+      var username = document.getElementsByName("username");
+      var $username = $(username);
+      alert(username);
+
+    }
+  </script>
+</head>
+<body>
+<input type="text" name="username" value="liu">
+</body>
+</html>

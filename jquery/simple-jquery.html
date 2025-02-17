@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 快速入门</title>
+    <!-- 引入 jquery 库-->
+    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        /**
+         * 使用 dom 编程
+         * 1. 代码比较麻烦
+         * 2. document.getElementById("btn01") 返回的是 dom 对象
+         */
+//使用原生 js+dom 完成
+//(1) 当页面加载完毕后，就执行 function
+// window.onload = function () {
+// //1. 得到 id=btn01 的 dom 对象
+// var btn01 = document.getElementById("btn01");
+
+        // //2. 绑定点击事件
+        // btn01.onclick = function () {
+        // alert("hello, js");
+        // }
+        // }
+
+        //使用 jquery
+        //1. 引入 jquery 库文件->感情的自然流露
+        //2. $(function(){}) 等价原生的 js 的, 当页面加载完毕就会执行 function(){}
+        /*
+
+        window.onload= function(){} */
+        // $(function (){
+        //     var $btn01 = $("#btn01");
+        //     $btn01.click(function (){
+        //         alert("hello,jquery...~~~")
+        //     })
+        // });
+
+        $(function (){
+            var $btn01 = $("#btn01");
+            $btn01.click(function () {
+                alert("hi")
+            })
+        });
+    </script>
+
+</head>
+<body>
+<button id="btn01">按钮 1</button>
+</body>
+</html>

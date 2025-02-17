@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery转dom</title>
+  <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    window.onclick = function () {
+      var username = document.getElementsByName("username");
+      var $username = $(username);
+      //第一种方式
+      // var newVar = $username.get(0);
+      // alert(newVar);
+
+      //第二种方式
+      var usernameElement = $username[0];
+      alert(usernameElement)
+    }
+  </script>
+</head>
+<body>
+<input type="text" name="username" value="liu">
+</body>
+</html>
