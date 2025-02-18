@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../script/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" >
+    $(function () {
+      $("#b1").click(function () {
+        var $input = $("input[name='hobby']:checked");
+        alert("选择的个数为= " + $input.length);
+        $input.each(function () {
+          alert("value= " + $(this).val());
+        })
+      });
+    });
+
+  </script>
+</head>
+<body>
+<h1>对复选框测试</h1>
+<input type="checkbox" name="hobby" value="排球">排球<br/>
+<input type="checkbox" name="hobby" value="足球">足球<br/>
+<input type="checkbox" name="hobby" value="地球">地球<br/>
+<input type="submit" id="b1" value="点击测试">
+</body>
+</html>
