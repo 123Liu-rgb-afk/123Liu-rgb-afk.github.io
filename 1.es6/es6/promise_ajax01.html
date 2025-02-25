@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise重排</title>
+  <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="script/utils.js"></script>
+  <script type="text/javascript">
+    getAjax("promise/data/student_100.json").then((data) => {
+      console.log("第一次请求",data);
+      return getAjax(`promise/data/class_${data.class_id}.json`);
+    }).then((data)=> {
+      console.log("第二次请求",data);
+      return getAjax(`promise/data/school_${data.school_id}.json`);
+    }).then((data) =>{
+      console.log("第三次请求",data);
+    }).catch((err) => {
+      console.log(err)
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

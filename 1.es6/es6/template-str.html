@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板化</title>
+  <script type="text/javascript">
+    let str = `for(int i = 0 ; i < = 10;i++) {
+    }`
+    console.log(str);
+
+    let str1 = `1+2=${1+2}`
+    console.log(str1)
+
+    let num1 = 1;
+    let num2 = 4;
+    let str3 = `${num1} + ${num2} = ${num1 + num2}`;
+    console.log(str3);
+
+    function f1(name){
+      console.log("name=" + name)
+    }
+
+    let str4 = `${f1("jcak")}`
+    let str5 = `${f1(str1)}`
+  </script>
+</head>
+<body>
+
+</body>
+</html>

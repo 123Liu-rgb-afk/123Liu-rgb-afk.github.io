@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise_ajax</title>
+   <script type="text/javascript" src="script/jquery-3.6.0.min.js">
+
+   </script>
+  <script type="text/javascript" >
+    new Promise((resolve,reject) => {
+      $.ajax({
+        url:"promise/data/student_100.json",
+        success(data) {
+          console.log("第一次Ajax请求的数据",data);
+          resolve(data);
+        },
+        error(err) {
+          reject(err);
+        }
+      })
+    }).then((data) =>{
+       return new Promise((resolve, reject) => {
+        $.ajax({
+          url:`promise/data/class_${data.class_id}.json`,
+          success(data) {
+            console.log("第二次Ajax请求的数据",data);
+            resolve(data);
+          },
+          error(err) {
+            reject(err);
+          }
+        })
+
+      })
+
+    }).catch((reject) => {
+      console.log("错误",reject);
+    })
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

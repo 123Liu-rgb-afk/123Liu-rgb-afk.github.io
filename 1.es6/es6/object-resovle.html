@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象解构</title>
+  <script type="text/javascript">
+    let monst = {name:'jack',age:10};
+    //第一种使用
+    //细节 : 属性名保持一致，用{}
+    //let 使用细节，只能声明一次，不能变量升级，作用局部。
+    
+    //第二种使用
+    console.log("===========");
+    let {age,name} = {name:'jack',age:10};
+    console.log(name," ",age);
+    
+    //第三种使用
+    function f({name,age}) {
+      console.log(name," ", age);
+    }
+    f(monst);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
