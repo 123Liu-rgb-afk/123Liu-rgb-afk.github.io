@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue快速入门</title>
+</head>
+<body>
+<div id="app">{{message}}--{{name}}</div>
+
+<script src="./vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data :{
+            message : "Hello , Vue",
+            name : "lrx"
+        }
+    })
+    console.log("vm=" ,vm)
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据双向渲染</title>
+</head>
+<body>
+<div id="app">
+  <h1>{{message}}</h1>
+  <input type="text" v-model="hobby.val"><br/>
+  <input type="text" :value="hobby.val"><br/>
+  <h1>你的爱好是:{{hobby.val}}</h1>
+</div>
+
+<script src="./vue.js"></script>
+<script>
+  let vm = new Vue({
+    el:"#app",
+    data :{
+      message : "你的爱好是",
+      hobby :{
+
+        val : "购物",
+      }
+
+    },
+
+  })
+  console.log("vm=" ,vm)
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业1</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="img_src"><br/>
+  <img v-bind:src="img_src" v-bind:width="img_width">
+</div>
+<script src="./vue.js"></script>
+<script>
+  new Vue( {
+    el:"#app",
+    data : {
+      img_src: "1.jpg",
+      img_width : "200px"
+    }
+  })
+</script>
+</body>
+</html>

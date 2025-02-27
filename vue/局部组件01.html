@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+</head>
+<body>
+<div id="app">
+
+    <count></count>
+    <count></count>
+</div>
+
+<script src="./vue.js"></script>
+<script>
+
+
+    const buttoncomponent = {
+        template:`<button v-on:click="click()">点击加一{{count}}</button>`,
+        data() {
+            return {
+                count:10
+            }
+        },
+        methods: {
+            click() {
+                this.count++;
+            }
+        }
+    }
+
+
+    new Vue({
+        el:"#app",
+        components:{
+            'count':buttoncomponent
+        }
+
+    })
+    new Vue({
+        el:"#app1",
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+</head>
+<body>
+<div id="app">
+
+    <count></count>
+    <count></count>
+</div>
+<div id="app1">
+    <count></count>
+    <count></count>
+</div>
+<script src="./vue.js"></script>
+<script>
+
+/*
+组件也是一个vue实例，也有自己的数据池和methods
+全局组件，定义在new vue 前面，在每一个vue都可以使用
+data数据池不在是一个对象，而是一个方法，保证数据的独立性
+
+
+ */
+    Vue.component("count",{
+        template:`<button v-on:click="click()">点击加一{{count}}</button>`,
+        data() {
+            return {
+                count:10
+            }
+        },
+        methods: {
+            click() {
+                this.count++;
+            }
+        }
+
+    })
+    new Vue({
+        el:"#app",
+
+    })
+    new Vue({
+        el:"#app1",
+
+    })
+</script>
+</body>
+</html>

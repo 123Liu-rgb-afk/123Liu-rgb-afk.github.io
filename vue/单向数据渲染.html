@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div id="app">
+  <h1>{{message}}--{{name}}</h1>
+  <img v-bind:src="img_src" v-bind:width="width">
+  <img :src="img_src" :width="width">
+</div>
+
+<script src="./vue.js"></script>
+<script>
+  let vm = new Vue({
+    el:"#app",
+    data :{
+      message : "Hello , Vue",
+      name : "lrx",
+
+      img_src : "1.jpg",
+      width : 100
+    }
+  })
+  console.log("vm=" ,vm)
+</script>
+</body>
+</html>
