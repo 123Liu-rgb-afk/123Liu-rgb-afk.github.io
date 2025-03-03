@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- 通过静态工厂配置bean -->
+
+    <bean class="com.lrx.spring.factory.MyInstanceFactory" id="myInstanceFactory"></bean>
+
+    <bean id="my" factory-bean="myInstanceFactory" factory-method="getMonster">
+        <constructor-arg value="monster_01"></constructor-arg>
+    </bean>
+
+    <!--通过静态工厂配置bean-->
+    <bean class="com.lrx.spring.factory.MyStaticFactory" id="myStaticFactory1" factory-method="getMonster">
+        <constructor-arg value="monster_01"></constructor-arg>
+
+
+    </bean>
+    <bean class="com.lrx.spring.bean.Master" id="master1">
+        <property name="name" value="lrx"></property>
+        <property name="monsterList">
+            <list>
+                <ref bean="monster01"></ref>
+                <ref bean="monster02"></ref>
+            </list>
+        </property>
+        <property name="monsterMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>100</value>
+                    </key>
+                    <ref bean="monster01"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>200</value>
+                    </key>
+                    <ref bean="monster02"></ref>
+                </entry>
+            </map>
+        </property>
+        <property name="monsterSet">
+            <set>
+                <ref bean="monster01"></ref>
+                <ref bean="monster02"></ref>
+            </set>
+        </property>
+        <property name="monsterName">
+            <array>
+                <value>妖怪</value>
+            </array>
+        </property>
+        <property name="pros">
+            <props>
+                <prop key="username">123</prop>
+            </props>
+        </property>
+    </bean>
+<!--    通过内部bean来配置-->
+
+    <bean class="com.lrx.spring.service.Service" id="service2">
+        <property name="dao">
+            <bean class="com.lrx.spring.dao.Dao"></bean>
+        </property>
+    </bean>
+<!--    通过ref来配置bean-->
+
+<!--    <bean class="com.lrx.spring.dao.Dao" id="dao"></bean>-->
+<!--    <bean class="com.lrx.spring.service.Service" id="service">-->
+<!--        <property name="dao" ref="dao"></property>-->
+<!--    </bean>-->
+<!--    通过构造器来平配置bean-->
+    <bean class="com.lrx.spring.bean.Monster" id="monster04">
+        <constructor-arg value="400" type="java.lang.Integer"></constructor-arg>
+        <constructor-arg value="孙悟空" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="七十二变" type="java.lang.String"></constructor-arg>
+    </bean>
+    <bean class="com.lrx.spring.bean.Monster" id="monster03">
+        <constructor-arg value="300" index="0"></constructor-arg>
+        <constructor-arg value="孙悟空" index="1"></constructor-arg>
+        <constructor-arg value="七十二变" index="2"></constructor-arg>
+    </bean>
+
+<!--    通过属性来配置bean-->
+    <bean class="com.lrx.spring.bean.Monster" id="monster01">
+        <property name="monsterId" value="100"></property>
+        <property name="name" value="牛魔王"></property>
+        <property name="skill" value="芭蕉扇 "></property>
+    </bean>
+    <bean class="com.lrx.spring.bean.Monster" id="monster02">
+        <property name="monsterId" value="1001"></property>
+        <property name="name" value="牛魔王~"></property>
+        <property name="skill" value="芭蕉扇~"></property>
+    </bean>
+</beans>
