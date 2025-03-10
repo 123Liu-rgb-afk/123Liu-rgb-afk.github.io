@@ -1,16 +1,46 @@
 package com.lrx.spring.test;
 
 
+import com.lrx.spring.bean.House;
 import com.lrx.spring.bean.Master;
 import com.lrx.spring.bean.Monster;
 import com.lrx.spring.service.Service;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 
 public class SpringTest {
+    @Test
+    public void setBeanByAnnotation() {
+        ApplicationContext ioc
+                = new ClassPathXmlApplicationContext("beans4.xml");
+
+        Object userDao = ioc.getBean("userService");
+        System.out.println(userDao);
+
+    }
+
+    @Test
+    public void postProcess() {
+        ApplicationContext ioc
+                = new ClassPathXmlApplicationContext("beans2.xml");
+        House house = ioc.getBean("house", House.class);
+        System.out.println(house);
+        ((ConfigurableApplicationContext)ioc).close();
+
+    }
+
+    @Test
+    public void getMonsterByFile() {
+        ApplicationContext ioc
+                = new ClassPathXmlApplicationContext("beans03.xml");
+        Monster bean = ioc.getBean("monster1000", Monster.class);
+        System.out.println("bean = " + bean);
+
+    }
     @Test
     public void getMonsterByInFactory() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");

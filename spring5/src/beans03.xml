@@ -10,6 +10,5 @@
         <property name="monsterId" value="${monsterId}"></property>
         <property name="name" value="${name}"></property>
         <property name="skill" value="${skill}"></property>
-
     </bean>
 </beans>
