@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 指定该xml文件与哪个接口对应-->
+<mapper namespace="com.lrx.mapper.MonsterMapper">
+
+    <insert id="addMonster" parameterType="Monster" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO monster (age,birthday,email,gender,name,salary)
+        VALUES(#{age},#{birthday},#{email},#{gender},#{name},#{salary})
+    </insert>
+
+    <delete id="delMonster" parameterType="java.lang.Integer">
+        DELETE FROM monster WHERE id = #{id}
+    </delete>
+    <update id="updateMonster" parameterType="Monster">
+        UPDATE monster SET age=#{age}, birthday=#{birthday}, email = #{email}, gender= #{gender}, name=#{name}, salary=#{salary} WHERE id=#{id}
+    </update>
+    <select id="getMonsterById" parameterType="java.lang.Integer" resultType="Monster">
+        SELECT * FROM monster where id = #{id}
+    </select>
+    <select id="findAllMonster" resultType="Monster">
+        select * from monster
+    </select>
+</mapper>
