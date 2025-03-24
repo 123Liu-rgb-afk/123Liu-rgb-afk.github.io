@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 指定该xml文件与哪个接口对应-->
+<mapper namespace="com.lrx.mapper.IdenCardMapper">
+
+    <resultMap id="idenCardMap" type="IdenCard">
+        <id property="id" column="id"></id>
+        <result property="card_sn" column="card_sn"></result>
+        <association property="person" column="id" select="com.lrx.mapper.PersonMapper.getPersonById2"></association>
+    </resultMap>
+<!--    public IdenCard getIdenCardById(Integer id);-->
+    <select id="getIdenCardById" parameterType="java.lang.Integer" resultType="IdenCard">
+        SELECT * FROM `idencard` WHERE `id` = #{id}
+    </select>
+
+    <select id="getIdenCardById2" parameterType="java.lang.Integer" resultMap="idenCardMap">
+        SELECT * FROM `idencard` WHERE `id` = #{id}
+    </select>
+</mapper>

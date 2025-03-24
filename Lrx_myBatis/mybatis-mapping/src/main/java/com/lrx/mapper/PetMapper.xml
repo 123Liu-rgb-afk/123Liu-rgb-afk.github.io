@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 指定该xml文件与哪个接口对应-->
+<mapper namespace="com.lrx.mapper.PetMapper">
+<!--public List<Pet> getPetByUserId(Integer userId);-->
+    <resultMap id="PetMap" type="Pet">
+        <id property="id" column="id"></id>
+        <result property="nickname" column="nickname"></result>
+        <association property="user" column="user_id" select="com.lrx.mapper.UserMapper.getUserById"></association>
+    </resultMap>
+    <select id="getPetByUserId" parameterType="Integer" resultMap="PetMap" >
+        SELECT * FROM mybatis_pet WHERE `user_id` = #{user_id}
+    </select>
+
+<!--    public Pet getPetById(Integer id);-->
+    <select id="getPetById" parameterType="Integer" resultMap="PetMap">
+        SELECT * FROM mybatis_pet WHERE `id` = #{id}
+    </select>
+</mapper>

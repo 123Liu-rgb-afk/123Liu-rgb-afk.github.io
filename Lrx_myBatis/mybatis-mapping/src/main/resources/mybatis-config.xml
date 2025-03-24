@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    引入外部文件-->
+    <properties resource="jdbc.properties"/>
+<!--    日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+<!--    别名-->
+    <typeAliases>
+        <package name="com.lrx.entity"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+<!--            配置事务管理器-->
+            <transactionManager type="JDBC"/>
+<!--            配置数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.pwd}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+<!--        <mapper resource="com/lrx/mapper/MonsterMapper.xml"/>-->
+<!--        <mapper class="com.lrx.mapper.MonsterAnnotation"></mapper>-->
+        
+        <package name="com.lrx.mapper"/>
+    </mappers>
+
+</configuration>
